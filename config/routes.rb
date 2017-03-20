@@ -1,9 +1,7 @@
 Rails.application.routes.draw do
-  get 'square_connection/new'
-
-  get 'square_connection/create'
-
-  post 'square_connection/create'
+  get '/' => 'merchant#new'
+  post '/merchant' => 'merchant#create'
+  get '/callback' => 'merchant#callback'
 
   devise_for :users
 

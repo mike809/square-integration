@@ -10,10 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170319230459) do
+ActiveRecord::Schema.define(version: 20170320042217) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "merchants", force: :cascade do |t|
+    t.datetime "created_at",                                                      null: false
+    t.datetime "updated_at",                                                      null: false
+    t.string   "access_token"
+    t.string   "#<ActiveRecord::ConnectionAdapters::PostgreSQL::TableDefinition"
+    t.index ["access_token"], name: "index_merchants_on_access_token", unique: true, using: :btree
+  end
 
   create_table "users", force: :cascade do |t|
     t.string   "email",                  default: "", null: false
