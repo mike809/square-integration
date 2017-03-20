@@ -6,9 +6,12 @@ git_source(:github) do |repo_name|
 end
 
 gem 'pry'
+gem 'pry-byebug'
 gem 'devise'
 gem 'cancancan'
-gem 'rspec'
+gem 'rspec-rails'
+gem 'unirest'
+gem 'square_connect'
 gem 'slim-rails'
 gem 'rails', '~> 5.0.2'
 gem 'pg', '~> 0.18'
