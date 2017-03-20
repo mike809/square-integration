@@ -10,10 +10,33 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170320042217) do
+ActiveRecord::Schema.define(version: 20170320071925) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "merchant_locations", force: :cascade do |t|
+    t.integer  "merchant_id"
+    t.string   "square_id"
+    t.string   "name"
+    t.string   "timezone"
+    t.datetime "created_at",  null: false
+    t.datetime "updated_at",  null: false
+    t.index ["merchant_id"], name: "index_merchant_locations_on_merchant_id", using: :btree
+    t.index ["square_id"], name: "index_merchant_locations_on_square_id", unique: true, using: :btree
+  end
+
+  create_table "merchant_transactions", force: :cascade do |t|
+    t.integer  "merchant_location_id"
+    t.string   "square_id"
+    t.string   "transaction_date"
+    t.string   "product"
+    t.string   "shipping_address"
+    t.datetime "created_at",           null: false
+    t.datetime "updated_at",           null: false
+    t.index ["merchant_location_id"], name: "index_merchant_transactions_on_merchant_location_id", using: :btree
+    t.index ["square_id"], name: "index_merchant_transactions_on_square_id", unique: true, using: :btree
+  end
 
   create_table "merchants", force: :cascade do |t|
     t.datetime "created_at",                                                      null: false
