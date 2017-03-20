@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 
 gem 'pry'
+gem 'hashie'
 gem 'pry-byebug'
 gem 'devise'
 gem 'cancancan'

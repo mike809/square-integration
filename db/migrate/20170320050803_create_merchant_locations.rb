@@ -4,6 +4,7 @@ class CreateMerchantLocations < ActiveRecord::Migration[5.0]
       t.belongs_to :merchant
       t.string :square_id
       t.string :name
+      t.string :address
       t.string :timezone
 
       t.timestamps

@@ -68,6 +68,7 @@ GEM
     ffi (1.9.18)
     globalid (0.3.7)
       activesupport (>= 4.1.0)
+    hashie (3.5.5)
     i18n (0.8.1)
     jbuilder (2.6.3)
       activesupport (>= 3.0.0, < 5.2)
@@ -221,6 +222,7 @@ DEPENDENCIES
   cancancan
   coffee-rails (~> 4.2)
   devise
+  hashie
   jbuilder (~> 2.5)
   jquery-rails
   listen (~> 3.0.5)

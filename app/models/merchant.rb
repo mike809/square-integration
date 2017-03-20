@@ -13,14 +13,18 @@ class Merchant < ApplicationRecord
 
     locations.each do |location|
       next if MerchantLocation.find_by_square_id(location.id)
-
       merchant_locations.create({
         square_id: location.id,
         name: location.name,
-        timezone: location.timezone
+        timezone: location.timezone,
+        address: denormalized_address(location.address)
       })
     end
 
     merchant_locations.each(&:fetch_merchant_transactions)
+  end
+
+  def denormalized_address(address)
+    address.values.join(', ')
   end
 end

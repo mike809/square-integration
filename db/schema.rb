@@ -19,6 +19,7 @@ ActiveRecord::Schema.define(version: 20170320071925) do
     t.integer  "merchant_id"
     t.string   "square_id"
     t.string   "name"
+    t.string   "address"
     t.string   "timezone"
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
