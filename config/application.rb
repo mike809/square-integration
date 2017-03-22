@@ -17,7 +17,11 @@ module Bitbond
     config.autoload_paths << Rails.root.join('lib')
 
     config.square_connect_host = 'https://connect.squareup.com'
-    config.square_app_secret = 'sq0csp-ZincDPNaL0OEqHO8x4zj3k8ngKVlCHvgHUOjbzB1fuc'
+
     config.square_app_id = 'sq0idp-Kl2FODMBB-J6oUd3mBZOaw'
+    config.square_app_secret = 'sq0csp-ZincDPNaL0OEqHO8x4zj3k8ngKVlCHvgHUOjbzB1fuc'
+
+    config.sandbox_square_app_secret = 'sandbox-sq0atb-MKh5RyMa3ASgbDrR16gDXw'
+    config.sandbox_square_app_id = 'sandbox-sq0idp-Kl2FODMBB-J6oUd3mBZOaw'
   end
 end
