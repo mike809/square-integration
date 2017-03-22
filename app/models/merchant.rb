@@ -17,14 +17,15 @@ class Merchant < ApplicationRecord
         square_id: location.id,
         name: location.name,
         timezone: location.timezone,
-        address: denormalized_address(location.address)
+        address: location.address
       })
     end
 
     merchant_locations.each(&:fetch_merchant_transactions)
   end
 
-  def denormalized_address(address)
-    address.values.join(', ')
+  def address=(address)
+    address ||= {}
+    address.to_hash.values.join(', ')
   end
 end
