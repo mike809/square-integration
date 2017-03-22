@@ -1,0 +1,12 @@
+.row
+  .col-sm-6.offset-sm-1
+    h1 Merchants
+.row
+  .col-sm-6.offset-sm-1
+    ul
+      - @merchants.each do |merchant|
+        li
+          p = merchant.access_token
+          ul
+            - merchant.merchant_locations.each do |location|
+              li = link_to location.name, admin_merchant_location_path(location)

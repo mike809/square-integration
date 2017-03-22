@@ -23,9 +23,4 @@ class Merchant < ApplicationRecord
 
     merchant_locations.each(&:fetch_merchant_transactions)
   end
-
-  def address=(address)
-    address ||= {}
-    address.to_hash.values.join(', ')
-  end
 end

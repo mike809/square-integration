@@ -32,7 +32,10 @@ ActiveRecord::Schema.define(version: 20170320071925) do
     t.string   "square_id"
     t.string   "transaction_date"
     t.string   "product"
-    t.string   "shipping_address"
+    t.integer  "amount_money"
+    t.integer  "processing_fee_money"
+    t.string   "currency"
+    t.string   "notes"
     t.datetime "created_at",           null: false
     t.datetime "updated_at",           null: false
     t.index ["merchant_location_id"], name: "index_merchant_transactions_on_merchant_location_id", using: :btree

@@ -1,0 +1,9 @@
+h1 Transactions
+.row
+  .col-sm-6.col-sm-offset-3
+    ul
+      - @merchants.each do |merchant|
+        h1 = merchant.token
+        ul
+          - merchant.merchant_locations.each do |location|
+            = link_to location.name, admin_merchant_locations_show_url(location)

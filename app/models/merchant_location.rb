@@ -22,8 +22,16 @@ class MerchantLocation < ApplicationRecord
         square_id: transaction.id,
         transaction_date: transaction.created_at,
         product: transaction.product,
-        shipping_address: transaction.shipping_address
+        amount_money: transaction.tenders,
+        currency: transaction.tenders,
+        processing_fee_money: transaction.tenders,
+        notes: transaction.tenders,
       })
     end
+  end
+
+  def address=(value)
+    value ||= {}
+    write_attribute(:address, value.to_hash.values.join(', '))
   end
 end

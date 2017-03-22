@@ -14,7 +14,7 @@ module Bitbond
       g.template_engine :slim
     end
 
-    config.autoload_paths << Rails.root.join('lib')
+    config.autoload_paths << "#{Rails.root}/lib"
 
     config.square_connect_host = 'https://connect.squareup.com'
 

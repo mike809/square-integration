@@ -1,0 +1,23 @@
+.row
+  .col-sm-6.offset-sm-1
+    h1 = @merchant_location.name
+.row
+  .col-sm-11.offset-sm-1
+    table.table.table-md
+      thead
+        tr
+          th = 'Product'
+          th = 'Amount of Money'
+          th = 'Processing Fee'
+          th = 'Currency'
+          th = 'Notes'
+          th = 'Transaction Date'
+      tbody
+        - @merchant_location.merchant_transactions.each do |transaction|
+          tr
+            th = transaction.product
+            th = transaction.amount_money
+            th = transaction.processing_fee_money
+            th = transaction.currency
+            th = transaction.notes
+            th = transaction.transaction_date

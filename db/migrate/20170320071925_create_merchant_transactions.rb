@@ -5,7 +5,10 @@ class CreateMerchantTransactions < ActiveRecord::Migration[5.0]
       t.string :square_id
       t.string :transaction_date
       t.string :product
-      t.string :shipping_address
+      t.integer :amount_money
+      t.integer :processing_fee_money
+      t.string :currency
+      t.string :notes
 
       t.timestamps
     end
